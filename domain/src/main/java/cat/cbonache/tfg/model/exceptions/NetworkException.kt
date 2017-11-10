@@ -1,4 +1,4 @@
-package cat.helm.basearchitecture.model.exceptions
+package cat.cbonache.tfg.model.exceptions
 
 /**
  * Created by Borja on 19/5/17.

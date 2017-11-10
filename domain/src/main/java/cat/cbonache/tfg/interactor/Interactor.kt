@@ -1,6 +1,6 @@
-package cat.helm.basearchitecture.interactor
+package cat.cbonache.tfg.interactor
 
-import cat.helm.basearchitecture.Result
+import cat.cbonache.tfg.Result
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.runBlocking
 
