@@ -1,7 +1,7 @@
-package cat.helm.basearchitecture.ui.main
+package cat.cbonache.tfg.ui.main
 
-import cat.helm.basearchitecture.R
-import cat.helm.basearchitecture.ui.base.BaseActivity
+import cat.cbonache.tfg.R
+import cat.cbonache.tfg.ui.base.BaseActivity
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainView {
