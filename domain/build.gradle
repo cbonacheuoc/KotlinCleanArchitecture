@@ -6,8 +6,6 @@ configurations {
     provided
 }
 
-
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -19,6 +17,15 @@ dependencies {
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
 
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
