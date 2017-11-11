@@ -1,4 +1,4 @@
-package cat.cbonache.tfg.model.exceptions
+package uoc.cbonache.tfg.model.exceptions
 
 /**
  * Created by Borja on 19/5/17.
