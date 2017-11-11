@@ -1,4 +1,4 @@
-package cat.cbonache.tfg
+package uoc.cbonache.tfg
 
 /**
  * Created by Borja on 4/1/17.
