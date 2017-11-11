@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">data</string>
+
+    <string name="TOKEN_FILE">token entity</string>
+    <string name="acess_token_key">acces_token</string>
+    <string name="refresh_token_key">refresh_token</string>
+    <string name="expire_key">expire</string>
+    <string name="retrieve_time">retrieve</string>
 </resources>
