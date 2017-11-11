@@ -9,7 +9,9 @@ interface ApiConstants {
         const val BASEURL = "http://transpdroid.tresipunt.com/"
         const val GET_TOKEN = "/oauth/token"
         const val REFRESH_TOKEN = "/oauth/token"
-        const val GET_PACKAGES = "/api/shippings/user"
-        const val GET_PACKAGEBYID = "/api/shipping/id/{packageid}/data"
+        const val GET_SHIPPINGS = "/api/shippings/user"
+        const val GET_SHIPPINGBYID = "/api/shipping/id/{shippingid}/data"
+        const val GET_SHIPPINGBYCODE = "/api/shipping/code/{shippingcode}/data"
+        const val GET_SHIPPINGDESTINY = "/api/shipping/id/{shippingid}/destiny"
     }
 }
