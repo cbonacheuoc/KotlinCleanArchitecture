@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+        <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:cropToPadding="false"
+                app:srcCompat="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/title"
+                app:layout_constraintVertical_chainStyle="spread"/>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoImage"
+                app:layout_constraintBottom_toTopOf="@+id/userWrapper"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/userWrapper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/username"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintBottom_toTopOf="@+id/passwordWrapper"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:ems="10"
+                    android:text="cbonache@uoc.edu"
+                    android:inputType="textEmailAddress"
+                    android:padding="8dp"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/passwordWrapper"
+                android:layout_width="0dp"
+                android:hint="@string/password"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/userWrapper"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="@+id/userWrapper"
+                app:layout_constraintTop_toBottomOf="@+id/userWrapper"
+                app:layout_constraintBottom_toTopOf="@+id/loginButton"
+                >
+
+            <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:ems="10"
+                    android:text="cbonache"
+                    android:inputType="textPassword"
+                    android:padding="8dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+                android:id="@+id/loginButton"
+                android:text="@string/login"
+                android:focusable="true"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="@+id/passwordWrapper"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="@+id/passwordWrapper"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordWrapper"
+                >
+
+            <requestFocus/>
+        </Button>
+
+
+        <include
+                android:id="@+id/loading"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                layout="@layout/include_loading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
