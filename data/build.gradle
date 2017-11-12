@@ -11,12 +11,17 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        buildTypes.each{
+            it.buildConfigField "String","AUTH_MAPS", "\""+getMapsApiKey()+"\""
         }
     }
     lintOptions {
@@ -39,6 +44,7 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -58,10 +64,8 @@ repositories {
     mavenCentral()
 }
 
-static def getApiKey(){
+static def getMapsApiKey(){
     def Properties props = new Properties()
-    //props.load(new FileInputStream(new File('local.properties')))
-    return props['API_KEY']
+    props.load(new FileInputStream(new File('local.properties')))
+    return props['GOOGLE_API']
 }
-
-
