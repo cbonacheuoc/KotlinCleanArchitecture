@@ -1,3 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <string name="app_name">Transpdroid</string>
+
+    <string name="server_error">Error del servidor</string>
+    <string name="no_internet_connection">No hi ha connexió a Internet</string>
+    <string name="unauthorized">No autoritzat</string>
+    <string name="main_menu">Menú Principal</string>
+    <string name="list_all_packages">Llistar tots els enviaments</string>
+    <string name="identify_by_qr">Identificar enviament mitjançant QR</string>
+    <string name="exit">Sortir</string>
+    <string name="password_error">Si us plau introduïu la contrasenya</string>
+    <string name="username_error">Si us plau introduïu el nom d\'usuari</string>
+    <string name="username">Nom d\'usuari</string>
+    <string name="password">Contrasenya</string>
+    <string name="login">ACCEDIR</string>
 </resources>
