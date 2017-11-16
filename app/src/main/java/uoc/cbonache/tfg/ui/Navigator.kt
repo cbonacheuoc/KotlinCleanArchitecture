@@ -10,13 +10,18 @@ import javax.inject.Inject
  */
 class Navigator @Inject constructor() {
 
+    fun navigateToShippingList(context: Context, flags: ArrayList<Int> = arrayListOf()) {
+
+        val intent = ShippingListActivity.getIntent(context)
+        for (flag in flags) {
+            intent.addFlags(flag)
+        }
+        context.startActivity(intent)
+    }
+
     fun navigateToLoginActivity(context: Context){
         val intent = LoginActivity.getIntent(context)
         context.startActivity(intent)
     }
 
-    fun navigateToShippingList(context: Context){
-        val intent = ShippingListActivity.getIntent(context)
-        context.startActivity(intent)
-    }
 }
