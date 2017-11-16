@@ -5,6 +5,18 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="cat.cbonache.tfg.ui.main.MainActivity">
+        tools:context="uoc.cbonache.tfg.ui.main.MainActivity">
+
+    <include
+            android:id="@+id/loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            layout="@layout/include_loading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
 </android.support.constraint.ConstraintLayout>
