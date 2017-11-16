@@ -6,6 +6,9 @@ import uoc.cbonache.tfg.ui.Navigator
 import uoc.cbonache.tfg.ui.base.BaseActivity
 import javax.inject.Inject
 
+/**
+ * @author cbonache
+ */
 class MainActivity : BaseActivity(), MainView {
 
     @Inject lateinit var presenter: MainPresenter

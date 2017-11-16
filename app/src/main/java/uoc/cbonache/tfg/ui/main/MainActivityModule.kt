@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * Created by Borja on 17/7/17.
+ * @author cbonache
  */
 @Module
 class MainActivityModule {
