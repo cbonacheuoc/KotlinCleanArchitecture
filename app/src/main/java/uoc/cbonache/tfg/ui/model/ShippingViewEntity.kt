@@ -1,0 +1,21 @@
+package uoc.cbonache.tfg.ui.model
+
+/**
+ * @author cbonache
+ */
+data class ShippingViewEntity(val id: Long,
+                             val code: String,
+                             val contact_person: String,
+                             val email: String,
+                             val number: String,
+                             val weight: String,
+                             val size: String,
+                             val fragile: String,
+                             val telephone: String,
+                             val address: String,
+                             val cp: String,
+                             val city: String,
+                             val state: String,
+                             val country: String,
+                             val created_at: String,
+                             val updated_at: String)
