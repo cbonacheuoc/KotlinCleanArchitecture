@@ -24,4 +24,8 @@ class Navigator @Inject constructor() {
         context.startActivity(intent)
     }
 
+    fun navigateToShippingDetail(context: Context, idShipping: Long) {
+
+    }
+
 }
