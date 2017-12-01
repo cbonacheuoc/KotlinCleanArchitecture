@@ -13,5 +13,7 @@ interface ApiConstants {
         const val GET_SHIPPINGBYID = "/api/shipping/id/{shippingid}/data"
         const val GET_SHIPPINGBYCODE = "/api/shipping/code/{shippingcode}/data"
         const val GET_SHIPPINGDESTINY = "/api/shipping/id/{shippingid}/destiny"
+        const val BASE_MAPS = "https://maps.googleapis.com/"
+        const val MAPS_ROUTE = "/maps/api/directions/json"
     }
 }
