@@ -6,12 +6,35 @@
     <string name="no_internet_connection">No hi ha connexió a Internet</string>
     <string name="unauthorized">No autoritzat</string>
     <string name="main_menu">Menú Principal</string>
-    <string name="list_all_packages">Llistar tots els enviaments</string>
+    <string name="shipping_list">Llistat d\'enviaments</string>
+    <string name="shipping_detail">Detall de l\'enviament</string>
+    <string name="shipping_map">Destí de l\'enviament</string>
+
+    <string name="list_all_shippings">Llistar tots els enviaments</string>
     <string name="identify_by_qr">Identificar enviament mitjançant QR</string>
     <string name="exit">Sortir</string>
     <string name="password_error">Si us plau introduïu la contrasenya</string>
     <string name="username_error">Si us plau introduïu el nom d\'usuari</string>
-    <string name="username">Nom d\'usuari</string>
     <string name="password">Contrasenya</string>
     <string name="login">ACCEDIR</string>
+    <string name="username">Nom d\'usuari</string>
+    <string name="warning_message">No hi ha borradors per mostrar</string>
+
+    <string name="address">Direcció:</string>
+    <string name="hour">Hora de lliurament:</string>
+    <string name="number">Nombre de paquets:</string>
+    <string name="titleList">Lliuraments del dia</string>
+
+    <string name="edit_permissions">Els privilegis es poden afegir manualment a Configuració</string>
+    <string name="settings">Configuració</string>
+    <string name="permission_dialog_tittle">Aquests privilegis són necessaris</string>
+    <string name="permission_message">L\'enregistrament d\'àudio i vídeo és necessari per a videollamada</string>
+    <string name="user_telephone_suffix">tel:</string>
+    <string name="permissions_call_message">Necessitem trucar</string>
+    <string name="permissions_location_message">Necessitem la geolocalizació</string>
+    <string name="title_activity_maps">Mapa</string>
+
+    <string name="map_button">Veure destí</string>
+    <string name="sign_button">Signar enviament</string>
+
 </resources>
