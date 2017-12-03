@@ -3,15 +3,10 @@ package uoc.cbonache.tfg.ui.shippingDetail
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.support.v4.content.ContextCompat
-import uoc.cbonache.tfg.model.Step
-import uoc.cbonache.tfg.shippings.GetShippingByIdInteractor
-import uoc.cbonache.tfg.route.GetRouteInteractor
+import uoc.cbonache.tfg.shippings.GetShippingByCodeInteractor
 import uoc.cbonache.tfg.ui.exception.AndroidExceptionHandler
 import uoc.cbonache.tfg.ui.model.mapper.mapToShippingViewEntity
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.PolylineOptions
 import javax.inject.Inject
 
 
@@ -19,12 +14,12 @@ import javax.inject.Inject
  * @author cbonache
  */
 class ShippingDetailPresenter @Inject constructor(val view: ShippingDetailView,
-                                                 val getShippingByIdInteractor: GetShippingByIdInteractor,
+                                                 val getShippingByCodeInteractor: GetShippingByCodeInteractor,
                                                  val exceptionHandler: AndroidExceptionHandler) {
 
-    fun onStart(shippingID: Long) {
+    fun onStart(code: String) {
 
-        getShippingByIdInteractor.execute(GetShippingByIdInteractor.Parameters(shippingID)) { result ->
+        getShippingByCodeInteractor.execute(GetShippingByCodeInteractor.Parameters(code)) { result ->
             result.success { shippingDetail ->
 
                 view.showShippingInfo(shippingDetail.mapToShippingViewEntity())
@@ -66,11 +61,11 @@ class ShippingDetailPresenter @Inject constructor(val view: ShippingDetailView,
         return false
     }
 
-    fun onShippingSignButtonPressed(idShipping: Long) {
-        view.navigateToShippingSignActivity(idShipping)
+    fun onShippingSignButtonPressed(code: String) {
+        view.navigateToShippingSignActivity(code)
     }
 
-    fun onShippingMapButtonPressed(idShipping: Long) {
-        view.navigateToShippingMapActivity(idShipping)
+    fun onShippingMapButtonPressed(code: String) {
+        view.navigateToShippingMapActivity(code)
     }
 }

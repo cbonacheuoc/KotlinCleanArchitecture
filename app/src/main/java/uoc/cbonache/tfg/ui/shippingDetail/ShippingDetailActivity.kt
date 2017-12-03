@@ -25,7 +25,7 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
 
     companion object {
 
-        const val ID_SHIPPING = "id"
+        const val CODE = "code"
         @JvmStatic
         fun getIntent(context: Context): Intent {
             return Intent(context, ShippingDetailActivity::class.java)
@@ -44,19 +44,19 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
 
     override fun onViewLoaded() {
 
-        val shippingID = intent.extras.get(ID_SHIPPING) as Long
+        val code = intent.extras.get(CODE) as String
 
         setUpActionBar()
 
         sign.setOnClickListener {
-            presenter.onShippingSignButtonPressed(shippingID)
+            presenter.onShippingSignButtonPressed(code)
         }
 
         map.setOnClickListener {
-            presenter.onShippingMapButtonPressed(shippingID)
+            presenter.onShippingMapButtonPressed(code)
         }
 
-        presenter.onStart(shippingID)
+        presenter.onStart(code)
     }
 
     private fun setUpActionBar() {
@@ -117,11 +117,11 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
         startActivity(callIntent)
     }
 
-    override fun navigateToShippingSignActivity(idShipping: Long) {
-        navigator.navigateToShippingSign(this, idShipping)
+    override fun navigateToShippingSignActivity(code: String) {
+        navigator.navigateToShippingSign(this, code)
     }
 
-    override fun navigateToShippingMapActivity(idShipping: Long) {
-        navigator.navigateToShippingMap(this, idShipping)
+    override fun navigateToShippingMapActivity(code: String) {
+        navigator.navigateToShippingMap(this, code)
     }
 }
