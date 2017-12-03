@@ -9,18 +9,15 @@ import android.graphics.Canvas
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
-import android.net.Uri
 import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
-import android.view.View
 import android.view.ViewGroup
 import uoc.cbonache.tfg.R
 import uoc.cbonache.tfg.ui.ManagePermissions
 import uoc.cbonache.tfg.ui.Navigator
 import uoc.cbonache.tfg.ui.base.BaseActivity
 import uoc.cbonache.tfg.ui.model.ShippingViewEntity
-import uoc.cbonache.tfg.ui.setPrefixTextBold
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -31,7 +28,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
-import kotlinx.android.synthetic.main.activity_shipping_detail.*
 import org.jetbrains.anko.contentView
 import javax.inject.Inject
 
@@ -43,7 +39,7 @@ class ShippingMapActivity: BaseActivity(), ShippingMapView, OnMapReadyCallback {
 
     companion object {
 
-        const val ID_SHIPPING = "id"
+        const val CODE = "code"
         @JvmStatic
         fun getIntent(context: Context): Intent {
             return Intent(context, ShippingMapActivity::class.java)
@@ -64,9 +60,9 @@ class ShippingMapActivity: BaseActivity(), ShippingMapView, OnMapReadyCallback {
     }
 
     override fun onViewLoaded() {
-        val shippingID = intent.extras.get(ID_SHIPPING) as Long
+        val code = intent.extras.get(CODE) as String
         setUpActionBar()
-        presenter.onStart(shippingID)
+        presenter.onStart(code)
     }
 
     override fun showMap() {
