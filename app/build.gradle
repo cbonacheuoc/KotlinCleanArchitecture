@@ -69,8 +69,11 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "com.karumi:dexter:$dexter_version"
 
-    implementation "com.google.android.gms:play-services-maps:11.4.2"
-    implementation 'com.google.android.gms:play-services-location:11.4.2'
+    implementation "com.google.android.gms:play-services-maps:11.6.0"
+    implementation 'com.google.android.gms:play-services-location:11.6.0'
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
+    compile "com.android.support:appcompat-v7:$support_version"
+
 }
 
 build.dependsOn ':detekt'
