@@ -11,8 +11,8 @@ interface ApiConstants {
         const val REFRESH_TOKEN = "/oauth/token"
         const val GET_SHIPPINGS = "/api/shippings/user"
         const val GET_SHIPPINGBYID = "/api/shipping/id/{shippingid}/data"
-        const val GET_SHIPPINGBYCODE = "/api/shipping/code/{shippingcode}/data"
-        const val GET_SHIPPINGDESTINY = "/api/shipping/id/{shippingid}/destiny"
+        const val GET_SHIPPINGBYCODE= "/api/shipping/code/{code}/data"
+        const val SIGN = "/api/shipping/setShippingStates"
         const val BASE_MAPS = "https://maps.googleapis.com/"
         const val MAPS_ROUTE = "/maps/api/directions/json"
     }
