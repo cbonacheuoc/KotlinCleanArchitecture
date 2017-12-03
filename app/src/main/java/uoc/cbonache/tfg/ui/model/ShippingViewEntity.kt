@@ -5,6 +5,7 @@ package uoc.cbonache.tfg.ui.model
  */
 data class ShippingViewEntity(val id: Long,
                              val code: String,
+                             val states: Int,
                              val contact_person: String,
                              val email: String,
                              val number: String,
