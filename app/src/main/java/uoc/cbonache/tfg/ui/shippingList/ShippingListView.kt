@@ -11,6 +11,6 @@ interface ShippingListView : LoadingView {
     fun showShippingList(shippingsList: List<ShippingViewEntity>)
     fun showNoShippingsWaring()
     fun dismissNoShippingsWarning()
-    fun navigateToShippingDetail(idShipping: Long)
-
+    fun navigateToShippingDetail(code: String)
+    fun scanQR()
 }

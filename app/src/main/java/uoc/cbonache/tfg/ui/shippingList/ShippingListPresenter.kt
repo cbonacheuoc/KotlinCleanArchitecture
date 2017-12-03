@@ -31,7 +31,11 @@ class ShippingListPresenter  @Inject constructor(val view: ShippingListView,
         }
     }
 
-    fun onShippingPressed(idShipping: Long) {
-        view.navigateToShippingDetail(idShipping)
+    fun onShippingPressed(code: String) {
+        view.navigateToShippingDetail(code)
+    }
+
+    fun onClickQR() {
+        view.scanQR()
     }
 }

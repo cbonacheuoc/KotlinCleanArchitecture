@@ -70,7 +70,7 @@ class ShippingViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         itemView.number_packages.setPrefixTextBold(context.getString(R.string.number),shippingToShow.number," ")
         itemView.hour.setPrefixTextBold(context.getString(R.string.hour),getHourInProperFormat(shippingToShow.updated_at)," ")
         itemView.setOnClickListener{
-            presenter.onShippingPressed(shippingToShow.id)
+            presenter.onShippingPressed(shippingToShow.code)
         }
     }
 
