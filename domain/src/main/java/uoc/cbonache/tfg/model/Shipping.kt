@@ -5,6 +5,7 @@ package uoc.cbonache.tfg.model
  */
 data class Shipping(val id: Long,
                    val code: String,
+                   val states: Int,
                    val contact_person: String,
                    val email: String,
                    val number: String,
@@ -18,5 +19,4 @@ data class Shipping(val id: Long,
                    val state: String,
                    val country: String,
                    val created_at: String,
-                   val updated_at: String){
-}
+                   val updated_at: String)
