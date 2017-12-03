@@ -6,15 +6,20 @@ buildscript {
     ext.anko_version = '0.10.1'
     ext.dagger_version = '2.12'
     ext.support_version = "26.1.0"
+    ext.retrofit_version = '2.3.0'
+    ext.dexter_version = '4.1.1'
 
     repositories {
         jcenter()
         google()
+        maven { url "http://dl.bintray.com/kotlin/kotlin" }
+        maven { url "https://jitpack.io" }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -24,6 +29,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "http://dl.bintray.com/kotlin/kotlin"
+        }
+        maven { url "https://jitpack.io" }
     }
 }
 
