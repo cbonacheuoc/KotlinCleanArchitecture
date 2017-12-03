@@ -11,8 +11,12 @@ import uoc.cbonache.tfg.data.repository.datasource.WritableDataSource
 import uoc.cbonache.tfg.data.repository.shippingRepository.ShippingApiDataSource
 import uoc.cbonache.tfg.data.repository.shippingRepository.ShippingDataRepository
 import uoc.cbonache.tfg.data.repository.shippingRepository.model.ShippingDataEntity
+import uoc.cbonache.tfg.data.repository.shippingRepository.query.GetShippingByCodeQueryApi
 import uoc.cbonache.tfg.data.repository.shippingRepository.query.GetShippingByIdQueryApi
 import uoc.cbonache.tfg.data.repository.shippingRepository.query.GetShippingsQueryApi
+import uoc.cbonache.tfg.data.repository.shippingState.ShippingStateApiDataSource
+import uoc.cbonache.tfg.data.repository.shippingState.ShippingStateDataRepository
+import uoc.cbonache.tfg.data.repository.shippingState.query.SetShippingStateQueryApi
 import uoc.cbonache.tfg.data.repository.query.Query
 import uoc.cbonache.tfg.data.repository.route.RouteApiDataSource
 import uoc.cbonache.tfg.data.repository.route.RouteDataRepository
@@ -25,6 +29,7 @@ import uoc.cbonache.tfg.data.repository.token.model.TokenInfoDataEntity
 import uoc.cbonache.tfg.data.repository.token.query.GetTokenFromDiskQuery
 import uoc.cbonache.tfg.data.repository.token.query.LoginApiQuery
 import uoc.cbonache.tfg.data.repository.token.query.RefreshTokenApiQuery
+import uoc.cbonache.tfg.repository.ShippingStateRepository
 import uoc.cbonache.tfg.repository.ShippingsRepository
 import uoc.cbonache.tfg.repository.RouteRepository
 import uoc.cbonache.tfg.repository.TokenRepository
@@ -163,11 +168,14 @@ class DataModule {
     @Singleton
     @ElementsIntoSet
     @ShippingsListQueries
-    fun providesShippingsApiQuery(getShippingsQuery: GetShippingsQueryApi, getShippingByIdQuery: GetShippingByIdQueryApi): MutableSet<Query> {
+    fun providesShippingsApiQuery(getShippingsQuery: GetShippingsQueryApi,
+                                 getShippingByIdQuery: GetShippingByIdQueryApi,
+                                 getShippingByCodeQueryApi: GetShippingByCodeQueryApi): MutableSet<Query> {
 
         val set = LinkedHashSet<Query>()
         set.add(getShippingsQuery)
         set.add(getShippingByIdQuery)
+        set.add(getShippingByCodeQueryApi)
         return set
     }
 
@@ -192,6 +200,30 @@ class DataModule {
 
         val set = LinkedHashSet<Query>()
         set.add(getRouteQueryApi)
+        return set
+    }
+
+    @Provides
+    @Singleton
+    fun providesShippingStateRepository(shippingStateDataRepository: ShippingStateDataRepository): ShippingStateRepository{
+
+        return shippingStateDataRepository
+    }
+
+    @Provides
+    @Singleton
+    fun providesApiShippingStateReadableDataSource(shippingStateApiDataSource: ShippingStateApiDataSource): ReadableDataSource<Unit,Boolean>{
+        return shippingStateApiDataSource
+    }
+
+    @Provides
+    @Singleton
+    @ElementsIntoSet
+    @ShippingStateQueries
+    fun providesShippingStateApiQuery(setShippingStateQueryApi: SetShippingStateQueryApi): MutableSet<Query> {
+
+        val set = LinkedHashSet<Query>()
+        set.add(setShippingStateQueryApi)
         return set
     }
 }
