@@ -28,21 +28,21 @@ class Navigator @Inject constructor() {
         context.startActivity(intent)
     }
 
-    fun navigateToShippingDetail(context: Context, idShipping: Long) {
+    fun navigateToShippingDetail(context: Context, code: String) {
         val intent = ShippingDetailActivity.getIntent(context)
-        intent.putExtra(ShippingDetailActivity.ID_SHIPPING,idShipping)
+        intent.putExtra(ShippingDetailActivity.CODE,code)
         context.startActivity(intent)
     }
 
-    fun navigateToShippingSign(context: Context, idShipping: Long) {
+    fun navigateToShippingSign(context: Context, code: String) {
         val intent = ShippingSignActivity.getIntent(context)
-        intent.putExtra(ShippingSignActivity.ID_SHIPPING,idShipping)
+        intent.putExtra(ShippingSignActivity.CODE,code)
         context.startActivity(intent)
     }
 
-    fun navigateToShippingMap(context: Context, idShipping: Long) {
+    fun navigateToShippingMap(context: Context, code: String) {
         val intent = ShippingMapActivity.getIntent(context)
-        intent.putExtra(ShippingMapActivity.ID_SHIPPING,idShipping)
+        intent.putExtra(ShippingMapActivity.CODE,code)
         context.startActivity(intent)
     }
 
