@@ -27,7 +27,7 @@ class GetRouteQueryApi @Inject constructor(@MapsRetrofit val retrofit: Retrofit,
 
 
             val service = retrofit.create(RouteService::class.java)
-            val call = service.getRoute(originLat.toString()+","+originLng.toString(), destination, "AIzaSyBwRIJrrULrFbgcRAWfiFYXkAvMCiwmrCU")
+            val call = service.getRoute(originLat.toString()+","+originLng.toString(), destination, "AIzaSyCzWNU-DDJeSf4JQKs7nWPB56qnXcZfQ2Q")
             val response = call.execute()
             if(response.isSuccessful){
 
