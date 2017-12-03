@@ -9,6 +9,7 @@ fun ShippingDataEntity.mapToShipping(): Shipping {
 
     return Shipping(this.id,
             this.code,
+            this.states,
             this.contact_person,
             this.email,
             this.number,
