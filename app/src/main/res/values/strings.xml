@@ -4,11 +4,13 @@
 
     <string name="server_error">Error del servidor</string>
     <string name="no_internet_connection">No hi ha connexió a Internet</string>
+    <string name="no_shipping_found">No s\'ha trobat cap enviament amb aquest codi</string>
     <string name="unauthorized">No autoritzat</string>
     <string name="main_menu">Menú Principal</string>
     <string name="shipping_list">Llistat d\'enviaments</string>
     <string name="shipping_detail">Detall de l\'enviament</string>
     <string name="shipping_map">Destí de l\'enviament</string>
+    <string name="shipping_sign">Signar l\'enviament</string>
 
     <string name="list_all_shippings">Llistar tots els enviaments</string>
     <string name="identify_by_qr">Identificar enviament mitjançant QR</string>
