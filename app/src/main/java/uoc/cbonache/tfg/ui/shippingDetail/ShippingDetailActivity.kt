@@ -14,7 +14,9 @@ import uoc.cbonache.tfg.ui.base.BaseActivity
 import uoc.cbonache.tfg.ui.model.ShippingViewEntity
 import uoc.cbonache.tfg.ui.setPrefixTextBold
 import kotlinx.android.synthetic.main.activity_shipping_detail.*
+import org.jetbrains.anko.alert
 import org.jetbrains.anko.contentView
+import org.jetbrains.anko.yesButton
 import javax.inject.Inject
 
 /**
@@ -70,6 +72,8 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
 
     override fun showShippingInfo(shippingViewEntity: ShippingViewEntity) {
 
+        setSignListeners(shippingViewEntity.id)
+
         shippingDestination = shippingViewEntity.address + " " + shippingViewEntity.cp + " " + shippingViewEntity.city + " " + shippingViewEntity.country
         contact.setPrefixTextBold("Contacto:", shippingViewEntity.contact_person)
         address.setPrefixTextBold(getString(R.string.address), shippingViewEntity.address, " ")
@@ -81,6 +85,17 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
 
         //TODO: Parsear estado
 
+    }
+
+    private fun setSignListeners(shippingID: Long) {
+
+        button404.setOnClickListener {
+            presenter.onButton404ButtonPressed(shippingID)
+        }
+
+        button502.setOnClickListener {
+            presenter.onButton502ButtonPressed(shippingID)
+        }
     }
 
     private fun changePhoneIconVisibility(phone: String) {
@@ -123,5 +138,15 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
 
     override fun navigateToShippingMapActivity(code: String) {
         navigator.navigateToShippingMap(this, code)
+    }
+
+    override fun showException(exceptionMessage: String) {
+        alert (exceptionMessage){
+            yesButton { finish() }
+        }.show()
+    }
+
+    override fun goToShippingList() {
+        navigator.navigateToShippingList(this)
     }
 }

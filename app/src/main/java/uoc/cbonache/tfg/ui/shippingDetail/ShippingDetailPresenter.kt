@@ -5,8 +5,10 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.support.v4.content.ContextCompat
 import uoc.cbonache.tfg.shippings.GetShippingByCodeInteractor
+import uoc.cbonache.tfg.shippings.SetShippingStateByIdInteractor
 import uoc.cbonache.tfg.ui.exception.AndroidExceptionHandler
 import uoc.cbonache.tfg.ui.model.mapper.mapToShippingViewEntity
+import uoc.cbonache.tfg.ui.ShippingStates
 import javax.inject.Inject
 
 
@@ -14,8 +16,9 @@ import javax.inject.Inject
  * @author cbonache
  */
 class ShippingDetailPresenter @Inject constructor(val view: ShippingDetailView,
-                                                 val getShippingByCodeInteractor: GetShippingByCodeInteractor,
-                                                 val exceptionHandler: AndroidExceptionHandler) {
+                                                  val getShippingByCodeInteractor: GetShippingByCodeInteractor,
+                                                  val setShippingStateByIdInteractor: SetShippingStateByIdInteractor,
+                                                  val exceptionHandler: AndroidExceptionHandler) {
 
     fun onStart(code: String) {
 
@@ -67,5 +70,27 @@ class ShippingDetailPresenter @Inject constructor(val view: ShippingDetailView,
 
     fun onShippingMapButtonPressed(code: String) {
         view.navigateToShippingMapActivity(code)
+    }
+
+    fun onButton404ButtonPressed(shippingID: Long) {
+
+        setShippingState(shippingID,ShippingStates.USER_NOT_FOUND.state)
+    }
+
+    fun onButton502ButtonPressed(shippingID: Long) {
+
+        setShippingState(shippingID,ShippingStates.WRONG_ADDRESS.state)
+    }
+
+    private fun setShippingState(shippingID: Long, state: Int){
+
+        setShippingStateByIdInteractor.execute(SetShippingStateByIdInteractor.Parameters(shippingID,state)) { result ->
+            result.success { result ->
+                view.goToShippingList()
+            }
+            result.failure { exception ->
+                exceptionHandler.notifyException(view, exception)
+            }
+        }
     }
 }

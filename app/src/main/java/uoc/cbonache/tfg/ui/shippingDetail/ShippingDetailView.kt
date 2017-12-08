@@ -11,7 +11,7 @@ interface ShippingDetailView : BaseView {
     fun showShippingInfo(mapToShippingViewEntity: ShippingViewEntity)
     fun makeCall()
     fun requestCallPhonePermission()
-
     fun navigateToShippingSignActivity(code: String)
     fun navigateToShippingMapActivity(code: String)
+    fun goToShippingList()
 }
