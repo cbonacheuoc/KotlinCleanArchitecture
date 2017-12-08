@@ -4,6 +4,7 @@ import android.content.Context
 import uoc.cbonache.tfg.R
 import uoc.cbonache.tfg.data.dependencyinjection.qualifier.ApplicationContext
 import uoc.cbonache.tfg.model.exceptions.NetworkException
+import uoc.cbonache.tfg.model.exceptions.ShippingException
 import uoc.cbonache.tfg.ui.base.BaseView
 import dagger.Reusable
 import javax.inject.Inject
@@ -20,6 +21,7 @@ class AndroidExceptionHandler @Inject constructor(@ApplicationContext val contex
             is NetworkException.UnauthorizedException ->  view.showException(context.getString(R.string.unauthorized))
             is NetworkException.NoInternetConnection -> view.showException(context.getString(R.string.no_internet_connection))
             is NetworkException.ServerException -> view.showException(context.getString(R.string.server_error))
+            is ShippingException.NoShippingException -> view.showException(context.getString(R.string.no_shipping_found))
             else -> view.showException(exception?.message ?: "Unknown error")
 
         }
