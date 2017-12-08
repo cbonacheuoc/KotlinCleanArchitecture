@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import uoc.cbonache.tfg.R
 import uoc.cbonache.tfg.ui.Navigator
 import uoc.cbonache.tfg.ui.base.BaseActivity
@@ -34,8 +33,6 @@ class ShippingListActivity : BaseActivity(), ShippingListView {
     @Inject lateinit var presenter: ShippingListPresenter
     @Inject lateinit var navigator: Navigator
     @Inject lateinit var adapter: ShippingAdapter
-    private val VERTICAL_ITEM_SPACE = 8
-
 
     override fun onRequestLayout(): Int {
         return R.layout.activity_shipping_list
@@ -113,11 +110,8 @@ class ShippingListActivity : BaseActivity(), ShippingListView {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
-            if (result.contents == null) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
-            } else {
+            if (result.contents != null) {
                 navigator.navigateToShippingDetail(this,result.contents)
-//                Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
