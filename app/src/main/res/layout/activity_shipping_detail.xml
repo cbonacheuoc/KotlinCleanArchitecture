@@ -48,12 +48,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/map"
-        app:layout_constraintEnd_toEndOf="@+id/number"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/number"
         app:layout_constraintTop_toBottomOf="@+id/number"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        />
 
     <TextView
         android:id="@+id/size"
@@ -70,12 +69,16 @@
         android:id="@+id/phoneButton"
         android:layout_width="35dp"
         android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/telephone_button"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/contact"
+        app:layout_constraintTop_toTopOf="@+id/contact" />
 
     <ImageView
         android:id="@+id/fragile_icon"
@@ -92,7 +95,7 @@
         android:id="@+id/map"
         android:layout_width="300dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/map_button"
@@ -113,5 +116,31 @@
         app:layout_constraintEnd_toEndOf="@+id/map"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/map" />
+
+    <Button
+        android:id="@+id/button404"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="124dp"
+        android:text="Usuari no trobat"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map" />
+
+    <Button
+        android:id="@+id/button502"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Direcció erronea"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/button404"
+        app:layout_constraintEnd_toEndOf="@+id/map"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button404"
+        app:layout_constraintTop_toTopOf="@+id/button404"
+        app:layout_constraintVertical_bias="0.875" />
 
 </android.support.constraint.ConstraintLayout>

@@ -9,7 +9,7 @@
     tools:context="uoc.cbonache.tfg.ui.shippingSign.ShippingSignActivity">
 
     <Button
-        android:id="@+id/sign"
+        android:id="@+id/buttonSign"
         android:layout_width="252dp"
         android:layout_height="36dp"
         android:layout_marginBottom="56dp"
@@ -30,7 +30,7 @@
         android:layout_height="226dp"
         android:layout_marginBottom="36dp"
         android:background="@drawable/rectangle_stroke"
-        app:layout_constraintBottom_toTopOf="@+id/sign"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSign"
         app:layout_constraintEnd_toEndOf="@+id/editText"
         app:layout_constraintStart_toStartOf="@+id/editText"
         tools:layout_conversion_absoluteHeight="100dp"
