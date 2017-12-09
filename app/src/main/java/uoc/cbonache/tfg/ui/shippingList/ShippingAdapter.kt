@@ -5,8 +5,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import uoc.cbonache.tfg.R
 import uoc.cbonache.tfg.ui.model.ShippingViewEntity
+import uoc.cbonache.tfg.ui.ShippingStates
 import uoc.cbonache.tfg.ui.setPrefixTextBold
 import kotlinx.android.synthetic.main.item_shipping.view.*
 import java.text.SimpleDateFormat
@@ -69,6 +71,7 @@ class ShippingViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         itemView.address.setPrefixTextBold(context.getString(R.string.address),shippingToShow.address," ")
         itemView.number_packages.setPrefixTextBold(context.getString(R.string.number),shippingToShow.number," ")
         itemView.hour.setPrefixTextBold(context.getString(R.string.hour),getHourInProperFormat(shippingToShow.updated_at)," ")
+        changeIconState(shippingToShow.states, itemView.shippingStatus)
         itemView.setOnClickListener{
             presenter.onShippingPressed(shippingToShow.code)
         }
@@ -82,5 +85,18 @@ class ShippingViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private fun changeFragileIconVisibility(isFragile: String, iconFragile: View){
         if(isFragile == "1") iconFragile.visibility = View.VISIBLE
         else iconFragile.visibility = View.GONE
+    }
+
+    private fun changeIconState(state: Int, packageState: ImageView){
+
+        when(state){
+            ShippingStates.USER_NOT_FOUND.state -> packageState.setImageResource(R.drawable.ic_delivery_error)
+            ShippingStates.DELIVERED.state -> packageState.setImageResource(R.drawable.ic_delivery_success)
+            ShippingStates.AT_DELIVERY_OFFICE.state -> packageState.setImageResource(R.drawable.ic_warehouse)
+            ShippingStates.IN_TRANSIT.state -> packageState.setImageResource(R.drawable.ic_delivery_truck)
+            ShippingStates.WRONG_ADDRESS.state -> packageState.setImageResource(R.drawable.ic_delivery_error)
+            else -> packageState.setImageResource(R.drawable.ic_delivery_error)
+
+        }
     }
 }
