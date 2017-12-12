@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:ems="10"
-                    android:text="cbonache@uoc.edu"
+                    android:text="repartidor1@uoc.edu"
                     android:inputType="textEmailAddress"
                     android:padding="8dp"/>
         </android.support.design.widget.TextInputLayout>
@@ -83,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:ems="10"
-                    android:text="cbonache"
+                    android:text="123456789"
                     android:inputType="textPassword"
                     android:padding="8dp"/>
 
