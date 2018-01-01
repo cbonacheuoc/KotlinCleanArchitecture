@@ -75,7 +75,7 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
         setSignListeners(shippingViewEntity.id)
 
         shippingDestination = shippingViewEntity.address + " " + shippingViewEntity.cp + " " + shippingViewEntity.city + " " + shippingViewEntity.country
-        contact.setPrefixTextBold("Contacto:", shippingViewEntity.contact_person)
+        contact.setPrefixTextBold("Contacte:", shippingViewEntity.contact_person)
         address.setPrefixTextBold(getString(R.string.address), shippingViewEntity.address, " ")
         number.setPrefixTextBold(getString(R.string.number), shippingViewEntity.number)
         weight.setPrefixTextBold("Peso:",shippingViewEntity.weight)

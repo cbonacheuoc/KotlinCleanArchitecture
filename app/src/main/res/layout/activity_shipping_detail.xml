@@ -122,7 +122,7 @@
         android:layout_width="135dp"
         android:layout_height="40dp"
         android:layout_marginBottom="124dp"
-        android:text="Usuari no trobat"
+        android:text="Client no trobat"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintStart_toStartOf="@+id/map" />
@@ -134,7 +134,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Direcció erronea"
+        android:text="Direcció errònia"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="@+id/button404"
         app:layout_constraintEnd_toEndOf="@+id/map"
