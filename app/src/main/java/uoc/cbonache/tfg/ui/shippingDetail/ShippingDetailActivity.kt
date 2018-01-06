@@ -78,7 +78,7 @@ class ShippingDetailActivity: BaseActivity(), ShippingDetailView {
         contact.setPrefixTextBold("Contacte:", shippingViewEntity.contact_person)
         address.setPrefixTextBold(getString(R.string.address), shippingViewEntity.address, " ")
         number.setPrefixTextBold(getString(R.string.number), shippingViewEntity.number)
-        weight.setPrefixTextBold("Peso:",shippingViewEntity.weight)
+        weight.setPrefixTextBold("Pes:",shippingViewEntity.weight)
         size.setPrefixTextBold("Altura:",shippingViewEntity.size)
         changeFragileIconVisibility(shippingViewEntity.fragile)
         changePhoneIconVisibility(shippingViewEntity.telephone)
